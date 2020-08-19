@@ -1,0 +1,10 @@
+const express = require('express');
+const ServiceController = require('./controllers/ServiceController');
+const ProfileController = require('./controllers/ProfileController');
+const routes = express.Router();
+routes.get('/profile/:id', ProfileController.index);
+routes.get('/services', ServiceController.index);
+routes.post('/services', ServiceController.create);
+routes.delete('/services/:id', ServiceController.delete);
+routes.put('/services/:id', ServiceController.put);
+module.exports = routes;
